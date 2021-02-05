@@ -1,5 +1,3 @@
-import java.io.*;
-
 public class Assign14 {
 	public static void main(String[] args) {
 		String bignum = "";

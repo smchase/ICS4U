@@ -9,11 +9,13 @@ public class Assign12 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("Enter votes: ");
 		String in = br.readLine();
+
 		int a = 0, b = 0;
 		for (int i = 0; i < in.length(); i++) {
 			if (in.charAt(i) == 'A') a++;
 			else if (in.charAt(i) == 'B') b++;
 		}
+		
 		System.out.print("Winner: ");
 		if (a > b) System.out.println("A");
 		else if (a < b) System.out.println("B");
