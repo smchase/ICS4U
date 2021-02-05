@@ -1,5 +1,5 @@
 /*input
-ABBABA
+ABBABB
 */
 
 import java.io.*;

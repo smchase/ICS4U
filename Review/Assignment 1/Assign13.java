@@ -1,5 +1,5 @@
 /*input
-10
+3
 */
 
 import java.io.*;
