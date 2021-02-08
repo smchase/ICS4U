@@ -2,7 +2,7 @@
 sample text
 */
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Assign21 {
 	public static void main(String[] args) {
