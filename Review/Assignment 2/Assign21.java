@@ -6,28 +6,28 @@ import java.util.Scanner;
 
 public class Assign21 {
 	public static void main(String[] args) {
+
+		// get input
 		Scanner input = new Scanner(System.in);
 		System.out.print("Enter a sentence: ");
 		String sentence[] = input.nextLine().toUpperCase().split(" ");
 
 		for (String word: sentence) {
+			
+			//make branches
 			for (int layer = -word.length()+1; layer <= word.length()-2; layer++) {
-				for (int indent = 0; indent < Math.abs(layer); indent++) {
-					System.out.print(" ");
-				}
-
+				String layerText = "";
 				int domain = word.length()-Math.abs(layer)-1;
 				for (int letter = -domain; letter <= domain; letter++) {
-					System.out.print(word.charAt(domain-Math.abs(letter)));
+					layerText += word.charAt(domain-Math.abs(letter));
 				}
-				System.out.println();
+				System.out.printf("%" + (word.length()+domain) + "s\n", layerText);
+
 			}
 
-			for (char c: word.toCharArray()) {
-				for (int indent = 0; indent <= word.length()-2; indent++) {
-					System.out.print(" ");
-				}
-				System.out.println(c);
+			// make trunk
+			for (char letter: word.toCharArray()) {
+				System.out.printf("%" + word.length() + "c\n", letter);
 			}
 			System.out.println();
 		}
