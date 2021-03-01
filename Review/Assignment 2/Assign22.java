@@ -1,13 +1,13 @@
 /*input
-Simon
-100
-Ben
-75
-Alex
-90
-Liam
-75
 John
+100
+Jack
+75
+Jill
+90
+Junha
+75
+JJ
 90
 -1
 */
@@ -49,7 +49,7 @@ public class Assign22 {
 			else System.out.print(", ");
 		}
 
-		System.out.print("Students acheieving the mode(s): ");
+		System.out.print("Students achieving the mode(s): ");
 		if (database.modeGetters.length == 0) System.out.print("not applicable\n");
 		else for (int i = 0; i < database.modeGetters.length; i++) {
 			System.out.print(database.modeGetters[i]);

@@ -37,10 +37,10 @@ public class Assign23 {
 					eliminated[player-1] = true;
 				} else {
 					fill(choice, player);
+					turns++;
 				}
 			}
 			System.out.println();
-			turns++;
 
 			if (win(player)) {
 				printBoard();
@@ -85,7 +85,7 @@ public class Assign23 {
 			if (winners.length() == 1) {
 				System.out.printf("Player %s wins.\n", winners);
 			} else {
-				System.out.print("Game ends in a tie. There is no winner.\n");
+				System.out.print("Multiple wins found. Game ends in a tie.\n");
 			}
 			System.exit(0);
 		}
@@ -118,7 +118,7 @@ public class Assign23 {
 			if (winners.length() == 1) {
 				System.out.printf("Player %s wins.\n", winners);
 			} else {
-				System.out.print("Game ends in a tie. There is no winner.\n");
+				System.out.print("Multiple wins found. Game ends in a tie.\n");
 			}
 			System.exit(0);
 		}
