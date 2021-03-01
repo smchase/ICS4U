@@ -10,21 +10,7 @@ public class Assign23 {
 
 		for (int player = 1; player <= 3; player = 1+player%3) {
 			if (eliminated[player-1]) continue;
-
 			printBoard();
-			if (win(player)) {
-				if (player == 3) {
-					System.out.println("Computer wins.");
-				} else {
-					System.out.printf("Player %d wins.\n", player);
-				}
-				System.exit(0);
-			}
-			
-			if (turns == 64) {
-				System.out.println("Board is full. Game ends in a tie.");
-				System.exit(0);
-			}
 
 			if (player == 3) {
 				int choice = (int)(Math.random()*8);
@@ -55,6 +41,20 @@ public class Assign23 {
 			}
 			System.out.println();
 			turns++;
+
+			if (win(player)) {
+				printBoard();
+				if (player == 3) {
+					System.out.println("Computer wins.");
+				} else {
+					System.out.printf("Player %d wins.\n", player);
+				}
+				System.exit(0);
+			} else if (turns == 64) {
+				printBoard();
+				System.out.println("Board is full. Game ends in a tie.");
+				System.exit(0);
+			}
 		}
 	}
 
