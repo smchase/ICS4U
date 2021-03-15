@@ -12,15 +12,19 @@ public class HTMLViewer {
 		int width = Integer.parseInt(br.readLine());
 
 		for (String line: lines) { 
-			if (line.length() == 0) System.out.println();
+			if (line.length() == 0) {
+				System.out.println();
+			} else {
+				int printed = 0;
+				while (line.length() > 0) {
 
-			int printed = 0;
-			while (line.length() > 0) {
-				if (line.length()+printed > width && line.indexOf(" ") != -1) {
 					int first = line.indexOf(" ");
 					int second = line.indexOf(" ", first+1);
 
-					if (second <= width-1-printed && second != -1) {
+					if (line.length() <= width-printed || first == -1) {
+						System.out.println(line);
+						line = "";
+					} else if (second <= width-1-printed && second != -1) {
 						System.out.print(line.substring(0, first+1));
 						line = line.substring(first+1, line.length());
 						printed += first+1;
@@ -29,9 +33,6 @@ public class HTMLViewer {
 						line = line.substring(first+1, line.length());
 						printed = 0;
 					}
-				} else {
-					System.out.println(line);
-					line = "";
 				}
 			}
 		}
