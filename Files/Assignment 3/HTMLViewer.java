@@ -7,27 +7,27 @@ public class HTMLViewer {
 		String doc = br.readLine().replace("<br>", "\n").replace("<p>", "\n\n").replace("<hr>", "------------------------------------------------");
 		String[] lines = doc.split("\n");
 
-		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+		br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("> Line width: ");
-		int width = Integer.parseInt(input.readLine());
+		int width = Integer.parseInt(br.readLine());
 
 		for (String line: lines) { 
 			if (line.length() == 0) System.out.println();
 
-			int count = 0;
+			int printed = 0;
 			while (line.length() > 0) {
-				if (line.length() > width-count && line.indexOf(" ") != -1) {
+				if (line.length()+printed > width && line.indexOf(" ") != -1) {
 					int first = line.indexOf(" ");
 					int second = line.indexOf(" ", first+1);
 
-					if (second <= width-1-count && second != -1) {
+					if (second <= width-1-printed && second != -1) {
 						System.out.print(line.substring(0, first+1));
 						line = line.substring(first+1, line.length());
-						count += first+1;
+						printed += first+1;
 					} else {
 						System.out.println(line.substring(0, first+1));
 						line = line.substring(first+1, line.length());
-						count = 0;
+						printed = 0;
 					}
 				} else {
 					System.out.println(line);
