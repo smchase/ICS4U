@@ -6,7 +6,10 @@ public class HTMLViewer {
 		BufferedReader br = new BufferedReader(new FileReader("webpage.html"));
 		String doc = br.readLine().replace("<br>", "\n").replace("<p>", "\n\n").replace("<hr>", "------------------------------------------------");
 		String[] lines = doc.split("\n");
-		int width = 35;
+
+		BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+		System.out.print("> Line width: ");
+		int width = Integer.parseInt(input.readLine());
 
 		for (String line: lines) { 
 			if (line.length() == 0) System.out.println();
